@@ -40,9 +40,20 @@
     }
 }
 
+- (void)addUser
+{
+    [self performSegueWithIdentifier:@"detailToAdd" sender:self];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+  //  self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addUser)];
+    self.navigationItem.rightBarButtonItem = addButton;
+    
+    
 	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }

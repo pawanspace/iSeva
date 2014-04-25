@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E06D32F190A043F00E5EE81 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E06D32E190A043F00E5EE81 /* image.png */; };
 		DC07095619059280005E971C /* AddUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC07095519059280005E971C /* AddUserViewController.m */; };
 		DC0A38D4190566D100A3E1A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0A38D3190566D100A3E1A5 /* Foundation.framework */; };
 		DC0A38D6190566D100A3E1A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0A38D5190566D100A3E1A5 /* CoreGraphics.framework */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E06D32E190A043F00E5EE81 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image.png; path = ../../../Desktop/image.png; sourceTree = "<group>"; };
 		DC07095419059280005E971C /* AddUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUserViewController.h; sourceTree = "<group>"; };
 		DC07095519059280005E971C /* AddUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddUserViewController.m; sourceTree = "<group>"; };
 		DC0A38D0190566D100A3E1A5 /* iSeva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSeva.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -131,6 +133,7 @@
 				DC0A38E4190566D200A3E1A5 /* AppDelegate.h */,
 				DC0A38E5190566D300A3E1A5 /* AppDelegate.m */,
 				DC07095419059280005E971C /* AddUserViewController.h */,
+				7E06D32E190A043F00E5EE81 /* image.png */,
 				DC07095519059280005E971C /* AddUserViewController.m */,
 				DC0A38E7190566D300A3E1A5 /* Main_iPhone.storyboard */,
 				DC0A38EA190566D300A3E1A5 /* Main_iPad.storyboard */,
@@ -254,6 +257,7 @@
 				DC0A38F7190566D300A3E1A5 /* Images.xcassets in Resources */,
 				DC0A38E9190566D300A3E1A5 /* Main_iPhone.storyboard in Resources */,
 				DC0A38E0190566D200A3E1A5 /* InfoPlist.strings in Resources */,
+				7E06D32F190A043F00E5EE81 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

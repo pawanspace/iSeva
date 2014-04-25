@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 
 @interface AddUserViewController : UITableViewController
 
@@ -17,5 +18,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *city;
 @property (weak, nonatomic) IBOutlet UISwitch *availability;
 @property (weak, nonatomic) IBOutlet UIButton *addSevadar;
+
+@property (strong, nonatomic) IBOutlet UIImageView *sevadarImage;
 
 @end
