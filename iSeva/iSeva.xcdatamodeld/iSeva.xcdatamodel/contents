@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13C64" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D45a" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Event">
         <attribute name="timeStamp" optional="YES" attributeType="Date">
             <userInfo/>
         </attribute>
         <userInfo/>
     </entity>
-    <entity name="Seva" syncable="YES">
+    <entity name="Seva" representedClassName="Seva" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="sevadars" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Sevadar" inverseName="sevas" inverseEntity="Sevadar" syncable="YES"/>
     </entity>
-    <entity name="Sevadar" syncable="YES">
+    <entity name="Sevadar" representedClassName="Sevadar" syncable="YES">
         <attribute name="availability" optional="YES" attributeType="Boolean" defaultValueString="YES" syncable="YES"/>
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,7 +22,7 @@
     </entity>
     <elements>
         <element name="Event" positionX="261" positionY="189" width="128" height="58"/>
-        <element name="Seva" positionX="108" positionY="108" width="128" height="103"/>
+        <element name="Seva" positionX="-56" positionY="410" width="128" height="103"/>
         <element name="Sevadar" positionX="-45" positionY="18" width="128" height="133"/>
     </elements>
 </model>

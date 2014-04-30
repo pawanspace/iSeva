@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import <CoreData/CoreData.h>
 
 @interface AddUserViewController : UITableViewController
 
@@ -20,5 +21,17 @@
 @property (weak, nonatomic) IBOutlet UIButton *addSevadar;
 
 @property (strong, nonatomic) IBOutlet UIImageView *sevadarImage;
+
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+
+/*
+ MOC connects to PSC.
+ 
+ */
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 
 @end

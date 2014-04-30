@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E06D32F190A043F00E5EE81 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E06D32E190A043F00E5EE81 /* image.png */; };
+		7E06D37F1910C01F00E5EE81 /* Sevadar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D37E1910C01F00E5EE81 /* Sevadar.m */; };
+		7E06D3821910C02A00E5EE81 /* Seva.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D3811910C02A00E5EE81 /* Seva.m */; };
 		DC07095619059280005E971C /* AddUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC07095519059280005E971C /* AddUserViewController.m */; };
 		DC0A38D4190566D100A3E1A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0A38D3190566D100A3E1A5 /* Foundation.framework */; };
 		DC0A38D6190566D100A3E1A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0A38D5190566D100A3E1A5 /* CoreGraphics.framework */; };
@@ -41,7 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7E06D32E190A043F00E5EE81 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = image.png; path = ../../../Desktop/image.png; sourceTree = "<group>"; };
+		7E06D37D1910C01F00E5EE81 /* Sevadar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sevadar.h; sourceTree = "<group>"; };
+		7E06D37E1910C01F00E5EE81 /* Sevadar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sevadar.m; sourceTree = "<group>"; };
+		7E06D3801910C02A00E5EE81 /* Seva.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Seva.h; path = ../Seva.h; sourceTree = "<group>"; };
+		7E06D3811910C02A00E5EE81 /* Seva.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Seva.m; path = ../Seva.m; sourceTree = "<group>"; };
 		DC07095419059280005E971C /* AddUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUserViewController.h; sourceTree = "<group>"; };
 		DC07095519059280005E971C /* AddUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddUserViewController.m; sourceTree = "<group>"; };
 		DC0A38D0190566D100A3E1A5 /* iSeva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSeva.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,10 +134,11 @@
 		DC0A38DB190566D200A3E1A5 /* iSeva */ = {
 			isa = PBXGroup;
 			children = (
+				7E06D3811910C02A00E5EE81 /* Seva.m */,
+				7E06D3801910C02A00E5EE81 /* Seva.h */,
 				DC0A38E4190566D200A3E1A5 /* AppDelegate.h */,
 				DC0A38E5190566D300A3E1A5 /* AppDelegate.m */,
 				DC07095419059280005E971C /* AddUserViewController.h */,
-				7E06D32E190A043F00E5EE81 /* image.png */,
 				DC07095519059280005E971C /* AddUserViewController.m */,
 				DC0A38E7190566D300A3E1A5 /* Main_iPhone.storyboard */,
 				DC0A38EA190566D300A3E1A5 /* Main_iPad.storyboard */,
@@ -143,6 +148,8 @@
 				DC0A38F4190566D300A3E1A5 /* DetailViewController.m */,
 				DC0A38F6190566D300A3E1A5 /* Images.xcassets */,
 				DC0A38ED190566D300A3E1A5 /* iSeva.xcdatamodeld */,
+				7E06D37D1910C01F00E5EE81 /* Sevadar.h */,
+				7E06D37E1910C01F00E5EE81 /* Sevadar.m */,
 				DC0A38DC190566D200A3E1A5 /* Supporting Files */,
 			);
 			path = iSeva;
@@ -257,7 +264,6 @@
 				DC0A38F7190566D300A3E1A5 /* Images.xcassets in Resources */,
 				DC0A38E9190566D300A3E1A5 /* Main_iPhone.storyboard in Resources */,
 				DC0A38E0190566D200A3E1A5 /* InfoPlist.strings in Resources */,
-				7E06D32F190A043F00E5EE81 /* image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +282,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E06D3821910C02A00E5EE81 /* Seva.m in Sources */,
 				DC0A38F5190566D300A3E1A5 /* DetailViewController.m in Sources */,
+				7E06D37F1910C01F00E5EE81 /* Sevadar.m in Sources */,
 				DC0A38F2190566D300A3E1A5 /* MasterViewController.m in Sources */,
 				DC0A38E6190566D300A3E1A5 /* AppDelegate.m in Sources */,
 				DC0A38EF190566D300A3E1A5 /* iSeva.xcdatamodeld in Sources */,
