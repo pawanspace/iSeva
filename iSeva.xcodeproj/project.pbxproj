@@ -14,6 +14,7 @@
 		7E06D3E919171B7000E5EE81 /* Seva.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D3E819171B7000E5EE81 /* Seva.m */; };
 		7E06D3EC19171C0800E5EE81 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D3EB19171C0800E5EE81 /* ImageTableViewCell.m */; };
 		7E06D3F21917458300E5EE81 /* UIImage+ImagePlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D3F11917458300E5EE81 /* UIImage+ImagePlaceHolder.m */; };
+		7E06D3F419174D8B00E5EE81 /* default-avatar.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7E06D3F319174D8B00E5EE81 /* default-avatar.jpeg */; };
 		DC07095619059280005E971C /* AddUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC07095519059280005E971C /* AddUserViewController.m */; };
 		DC0A38D4190566D100A3E1A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0A38D3190566D100A3E1A5 /* Foundation.framework */; };
 		DC0A38D6190566D100A3E1A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0A38D5190566D100A3E1A5 /* CoreGraphics.framework */; };
@@ -58,6 +59,7 @@
 		7E06D3EB19171C0800E5EE81 /* ImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
 		7E06D3F01917458300E5EE81 /* UIImage+ImagePlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImagePlaceHolder.h"; sourceTree = "<group>"; };
 		7E06D3F11917458300E5EE81 /* UIImage+ImagePlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImagePlaceHolder.m"; sourceTree = "<group>"; };
+		7E06D3F319174D8B00E5EE81 /* default-avatar.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "default-avatar.jpeg"; sourceTree = "<group>"; };
 		DC07095419059280005E971C /* AddUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUserViewController.h; sourceTree = "<group>"; };
 		DC07095519059280005E971C /* AddUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddUserViewController.m; sourceTree = "<group>"; };
 		DC0A38D0190566D100A3E1A5 /* iSeva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSeva.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 		DC0A38DB190566D200A3E1A5 /* iSeva */ = {
 			isa = PBXGroup;
 			children = (
+				7E06D3F319174D8B00E5EE81 /* default-avatar.jpeg */,
 				7E06D3EA19171C0800E5EE81 /* ImageTableViewCell.h */,
 				7E06D3EB19171C0800E5EE81 /* ImageTableViewCell.m */,
 				7E06D3891914B2B000E5EE81 /* my.jpg */,
@@ -286,6 +289,7 @@
 				DC0A38F7190566D300A3E1A5 /* Images.xcassets in Resources */,
 				DC0A38E9190566D300A3E1A5 /* Main_iPhone.storyboard in Resources */,
 				DC0A38E0190566D200A3E1A5 /* InfoPlist.strings in Resources */,
+				7E06D3F419174D8B00E5EE81 /* default-avatar.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
