@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7E06D37F1910C01F00E5EE81 /* Sevadar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D37E1910C01F00E5EE81 /* Sevadar.m */; };
-		7E06D3821910C02A00E5EE81 /* Seva.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D3811910C02A00E5EE81 /* Seva.m */; };
+		7E06D3861914B20D00E5EE81 /* local.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E06D3851914B20D00E5EE81 /* local.jpg */; };
+		7E06D3881914B25A00E5EE81 /* coffee_time.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E06D3871914B25A00E5EE81 /* coffee_time.png */; };
+		7E06D38A1914B2B000E5EE81 /* my.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7E06D3891914B2B000E5EE81 /* my.jpg */; };
+		7E06D3E619171B7000E5EE81 /* Sevadar.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D3E519171B7000E5EE81 /* Sevadar.m */; };
+		7E06D3E919171B7000E5EE81 /* Seva.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D3E819171B7000E5EE81 /* Seva.m */; };
+		7E06D3EC19171C0800E5EE81 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D3EB19171C0800E5EE81 /* ImageTableViewCell.m */; };
 		DC07095619059280005E971C /* AddUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC07095519059280005E971C /* AddUserViewController.m */; };
 		DC0A38D4190566D100A3E1A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0A38D3190566D100A3E1A5 /* Foundation.framework */; };
 		DC0A38D6190566D100A3E1A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0A38D5190566D100A3E1A5 /* CoreGraphics.framework */; };
@@ -42,10 +46,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7E06D37D1910C01F00E5EE81 /* Sevadar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sevadar.h; sourceTree = "<group>"; };
-		7E06D37E1910C01F00E5EE81 /* Sevadar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sevadar.m; sourceTree = "<group>"; };
-		7E06D3801910C02A00E5EE81 /* Seva.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Seva.h; path = ../Seva.h; sourceTree = "<group>"; };
-		7E06D3811910C02A00E5EE81 /* Seva.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Seva.m; path = ../Seva.m; sourceTree = "<group>"; };
+		7E06D3851914B20D00E5EE81 /* local.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = local.jpg; sourceTree = "<group>"; };
+		7E06D3871914B25A00E5EE81 /* coffee_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coffee_time.png; sourceTree = "<group>"; };
+		7E06D3891914B2B000E5EE81 /* my.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = my.jpg; sourceTree = "<group>"; };
+		7E06D3E419171B7000E5EE81 /* Sevadar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sevadar.h; sourceTree = "<group>"; };
+		7E06D3E519171B7000E5EE81 /* Sevadar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sevadar.m; sourceTree = "<group>"; };
+		7E06D3E719171B7000E5EE81 /* Seva.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Seva.h; sourceTree = "<group>"; };
+		7E06D3E819171B7000E5EE81 /* Seva.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Seva.m; sourceTree = "<group>"; };
+		7E06D3EA19171C0800E5EE81 /* ImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageTableViewCell.h; sourceTree = "<group>"; };
+		7E06D3EB19171C0800E5EE81 /* ImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageTableViewCell.m; sourceTree = "<group>"; };
 		DC07095419059280005E971C /* AddUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUserViewController.h; sourceTree = "<group>"; };
 		DC07095519059280005E971C /* AddUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddUserViewController.m; sourceTree = "<group>"; };
 		DC0A38D0190566D100A3E1A5 /* iSeva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSeva.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,8 +143,11 @@
 		DC0A38DB190566D200A3E1A5 /* iSeva */ = {
 			isa = PBXGroup;
 			children = (
-				7E06D3811910C02A00E5EE81 /* Seva.m */,
-				7E06D3801910C02A00E5EE81 /* Seva.h */,
+				7E06D3EA19171C0800E5EE81 /* ImageTableViewCell.h */,
+				7E06D3EB19171C0800E5EE81 /* ImageTableViewCell.m */,
+				7E06D3891914B2B000E5EE81 /* my.jpg */,
+				7E06D3871914B25A00E5EE81 /* coffee_time.png */,
+				7E06D3851914B20D00E5EE81 /* local.jpg */,
 				DC0A38E4190566D200A3E1A5 /* AppDelegate.h */,
 				DC0A38E5190566D300A3E1A5 /* AppDelegate.m */,
 				DC07095419059280005E971C /* AddUserViewController.h */,
@@ -147,9 +159,11 @@
 				DC0A38F3190566D300A3E1A5 /* DetailViewController.h */,
 				DC0A38F4190566D300A3E1A5 /* DetailViewController.m */,
 				DC0A38F6190566D300A3E1A5 /* Images.xcassets */,
+				7E06D3E419171B7000E5EE81 /* Sevadar.h */,
+				7E06D3E719171B7000E5EE81 /* Seva.h */,
+				7E06D3E819171B7000E5EE81 /* Seva.m */,
+				7E06D3E519171B7000E5EE81 /* Sevadar.m */,
 				DC0A38ED190566D300A3E1A5 /* iSeva.xcdatamodeld */,
-				7E06D37D1910C01F00E5EE81 /* Sevadar.h */,
-				7E06D37E1910C01F00E5EE81 /* Sevadar.m */,
 				DC0A38DC190566D200A3E1A5 /* Supporting Files */,
 			);
 			path = iSeva;
@@ -260,7 +274,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E06D3861914B20D00E5EE81 /* local.jpg in Resources */,
 				DC0A38EC190566D300A3E1A5 /* Main_iPad.storyboard in Resources */,
+				7E06D38A1914B2B000E5EE81 /* my.jpg in Resources */,
+				7E06D3881914B25A00E5EE81 /* coffee_time.png in Resources */,
 				DC0A38F7190566D300A3E1A5 /* Images.xcassets in Resources */,
 				DC0A38E9190566D300A3E1A5 /* Main_iPhone.storyboard in Resources */,
 				DC0A38E0190566D200A3E1A5 /* InfoPlist.strings in Resources */,
@@ -282,12 +299,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E06D3821910C02A00E5EE81 /* Seva.m in Sources */,
 				DC0A38F5190566D300A3E1A5 /* DetailViewController.m in Sources */,
-				7E06D37F1910C01F00E5EE81 /* Sevadar.m in Sources */,
+				7E06D3E619171B7000E5EE81 /* Sevadar.m in Sources */,
 				DC0A38F2190566D300A3E1A5 /* MasterViewController.m in Sources */,
 				DC0A38E6190566D300A3E1A5 /* AppDelegate.m in Sources */,
+				7E06D3EC19171C0800E5EE81 /* ImageTableViewCell.m in Sources */,
 				DC0A38EF190566D300A3E1A5 /* iSeva.xcdatamodeld in Sources */,
+				7E06D3E919171B7000E5EE81 /* Seva.m in Sources */,
 				DC0A38E2190566D200A3E1A5 /* main.m in Sources */,
 				DC07095619059280005E971C /* AddUserViewController.m in Sources */,
 			);

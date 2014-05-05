@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 #import <CoreData/CoreData.h>
+#import "MasterViewController.h"
 
-@interface AddUserViewController : UITableViewController
+@interface AddUserViewController : UITableViewController  <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UIView *sevadarName;
+@property (strong, nonatomic) IBOutlet UITextField *name;
 
 @property (weak, nonatomic) IBOutlet UITextField *sevadarPhoneNumber;
 @property (weak, nonatomic) IBOutlet UITextField *sevadarEmail;
@@ -23,7 +24,12 @@
 @property (strong, nonatomic) IBOutlet UIImageView *sevadarImage;
 
 
+@property (strong, nonatomic) IBOutlet UIView *imageCell;
+
+
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+@property (strong, nonatomic) MasterViewController *masterViewController;
 
 
 /*

@@ -7,7 +7,7 @@
 //
 
 #import "AddUserViewController.h"
-
+#import <QuartzCore/QuartzCore.h>
 
 @interface AddUserViewController ()
 
@@ -26,14 +26,68 @@
     return self;
 }
 
+- (IBAction)addImage:(id)sender {
+    
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+    
+    //If device has camera
+    if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    }
+    else{
+        [imagePicker setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    }
+    
+    [imagePicker setDelegate:self];
+    
+    [self presentViewController:imagePicker animated:YES completion:nil];
+    
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    //Get image from selection
+    
+    UIImage *imageFromSelection = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    //put that image to image view;
+    [self.sevadarImage setImage:imageFromSelection];
+    
+    //remove image picker
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    UIImage *image = [UIImage imageNamed:@"image.png"];
-    [self.sevadarImage setImage:image];
+
+    UIImageView* image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"my.jpg"]];
+    image.center = self.view.center;
+    image.frame = CGRectMake(image.frame.origin.x, 10, 80, 80);
+    
+    // make new layer to contain shadow and masked image
+    CALayer* containerLayer = [CALayer layer];
+    containerLayer.shadowColor = [UIColor blackColor].CGColor;
+    containerLayer.shadowRadius = 10.f;
+    containerLayer.shadowOffset = CGSizeMake(0.f, 5.f);
+    containerLayer.shadowOpacity = 1.f;
+    
+    // use the image's layer to mask the image into a circle
+    image.layer.cornerRadius = roundf(image.frame.size.width/2.0);
+    image.layer.masksToBounds = YES;
+    
+    // add masked image layer into container layer so that it's shadowed
+    [containerLayer addSublayer:image.layer];
+    
+    // add container including masked image and shadow into view
+    [self.imageCell.layer addSublayer:containerLayer];
+    
    
     
 	// Do any additional setup after loading the view.

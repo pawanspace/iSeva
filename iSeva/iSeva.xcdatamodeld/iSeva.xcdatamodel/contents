@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5064" systemVersion="13D45a" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event">
-        <attribute name="timeStamp" optional="YES" attributeType="Date">
-            <userInfo/>
-        </attribute>
-        <userInfo/>
-    </entity>
     <entity name="Seva" representedClassName="Seva" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
@@ -18,11 +12,12 @@
         <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="phone" attributeType="String" syncable="YES"/>
+        <attribute name="thumbnail" optional="YES" transient="YES" syncable="YES"/>
+        <attribute name="thumbnailData" optional="YES" attributeType="Binary" syncable="YES"/>
         <relationship name="sevas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Seva" inverseName="sevadars" inverseEntity="Seva" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="58"/>
-        <element name="Seva" positionX="-56" positionY="410" width="128" height="103"/>
-        <element name="Sevadar" positionX="-45" positionY="18" width="128" height="133"/>
+        <element name="Seva" positionX="-531" positionY="387" width="128" height="103"/>
+        <element name="Sevadar" positionX="-632" positionY="-169" width="128" height="163"/>
     </elements>
 </model>
