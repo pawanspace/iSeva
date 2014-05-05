@@ -52,8 +52,9 @@
     
     //put that image to image view;
     [self.sevadarImage setImage:imageFromSelection];
-    
+    UIImageView* image = [[UIImageView alloc] initWithImage:imageFromSelection];
     //remove image picker
+    [self loadImage:image];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
@@ -67,9 +68,19 @@
     [super viewDidLoad];
     
 
-    UIImageView* image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"my.jpg"]];
+    UIImageView* image = [[UIImageView alloc] init];
+
+    [self loadImage:image];
+   
+    
+	// Do any additional setup after loading the view.
+}
+
+
+- (void)loadImage:(UIImageView*)image
+{
     image.center = self.view.center;
-    image.frame = CGRectMake(image.frame.origin.x, 10, 80, 80);
+    image.frame = CGRectMake(20, 10, 80, 80);
     
     // make new layer to contain shadow and masked image
     CALayer* containerLayer = [CALayer layer];
@@ -87,10 +98,6 @@
     
     // add container including masked image and shadow into view
     [self.imageCell.layer addSublayer:containerLayer];
-    
-   
-    
-	// Do any additional setup after loading the view.
 }
 
 
