@@ -15,6 +15,9 @@
 		7E06D3EC19171C0800E5EE81 /* ImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D3EB19171C0800E5EE81 /* ImageTableViewCell.m */; };
 		7E06D3F21917458300E5EE81 /* UIImage+ImagePlaceHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D3F11917458300E5EE81 /* UIImage+ImagePlaceHolder.m */; };
 		7E06D3F419174D8B00E5EE81 /* default-avatar.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7E06D3F319174D8B00E5EE81 /* default-avatar.jpeg */; };
+		7E06D3F7191B3C0400E5EE81 /* SevaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D3F6191B3C0400E5EE81 /* SevaTableViewController.m */; };
+		7E06D3FA191B431C00E5EE81 /* SevaDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D3F9191B431C00E5EE81 /* SevaDetailsViewController.m */; };
+		7E06D3FD191B432E00E5EE81 /* AddSevaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E06D3FC191B432E00E5EE81 /* AddSevaViewController.m */; };
 		DC07095619059280005E971C /* AddUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DC07095519059280005E971C /* AddUserViewController.m */; };
 		DC0A38D4190566D100A3E1A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0A38D3190566D100A3E1A5 /* Foundation.framework */; };
 		DC0A38D6190566D100A3E1A5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC0A38D5190566D100A3E1A5 /* CoreGraphics.framework */; };
@@ -60,6 +63,12 @@
 		7E06D3F01917458300E5EE81 /* UIImage+ImagePlaceHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImagePlaceHolder.h"; sourceTree = "<group>"; };
 		7E06D3F11917458300E5EE81 /* UIImage+ImagePlaceHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImagePlaceHolder.m"; sourceTree = "<group>"; };
 		7E06D3F319174D8B00E5EE81 /* default-avatar.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "default-avatar.jpeg"; sourceTree = "<group>"; };
+		7E06D3F5191B3C0400E5EE81 /* SevaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevaTableViewController.h; sourceTree = "<group>"; };
+		7E06D3F6191B3C0400E5EE81 /* SevaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevaTableViewController.m; sourceTree = "<group>"; };
+		7E06D3F8191B431C00E5EE81 /* SevaDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SevaDetailsViewController.h; sourceTree = "<group>"; };
+		7E06D3F9191B431C00E5EE81 /* SevaDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SevaDetailsViewController.m; sourceTree = "<group>"; };
+		7E06D3FB191B432E00E5EE81 /* AddSevaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddSevaViewController.h; sourceTree = "<group>"; };
+		7E06D3FC191B432E00E5EE81 /* AddSevaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddSevaViewController.m; sourceTree = "<group>"; };
 		DC07095419059280005E971C /* AddUserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddUserViewController.h; sourceTree = "<group>"; };
 		DC07095519059280005E971C /* AddUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddUserViewController.m; sourceTree = "<group>"; };
 		DC0A38D0190566D100A3E1A5 /* iSeva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iSeva.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,7 +173,13 @@
 				DC0A38F1190566D300A3E1A5 /* MasterViewController.m */,
 				DC0A38F3190566D300A3E1A5 /* DetailViewController.h */,
 				DC0A38F4190566D300A3E1A5 /* DetailViewController.m */,
+				7E06D3F5191B3C0400E5EE81 /* SevaTableViewController.h */,
+				7E06D3F6191B3C0400E5EE81 /* SevaTableViewController.m */,
 				7E06D3F01917458300E5EE81 /* UIImage+ImagePlaceHolder.h */,
+				7E06D3F8191B431C00E5EE81 /* SevaDetailsViewController.h */,
+				7E06D3FB191B432E00E5EE81 /* AddSevaViewController.h */,
+				7E06D3FC191B432E00E5EE81 /* AddSevaViewController.m */,
+				7E06D3F9191B431C00E5EE81 /* SevaDetailsViewController.m */,
 				7E06D3F11917458300E5EE81 /* UIImage+ImagePlaceHolder.m */,
 				DC0A38F6190566D300A3E1A5 /* Images.xcassets */,
 				7E06D3E419171B7000E5EE81 /* Sevadar.h */,
@@ -309,10 +324,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC0A38F5190566D300A3E1A5 /* DetailViewController.m in Sources */,
+				7E06D3F7191B3C0400E5EE81 /* SevaTableViewController.m in Sources */,
 				7E06D3E619171B7000E5EE81 /* Sevadar.m in Sources */,
 				DC0A38F2190566D300A3E1A5 /* MasterViewController.m in Sources */,
 				DC0A38E6190566D300A3E1A5 /* AppDelegate.m in Sources */,
+				7E06D3FD191B432E00E5EE81 /* AddSevaViewController.m in Sources */,
 				7E06D3F21917458300E5EE81 /* UIImage+ImagePlaceHolder.m in Sources */,
+				7E06D3FA191B431C00E5EE81 /* SevaDetailsViewController.m in Sources */,
 				7E06D3EC19171C0800E5EE81 /* ImageTableViewCell.m in Sources */,
 				DC0A38EF190566D300A3E1A5 /* iSeva.xcdatamodeld in Sources */,
 				7E06D3E919171B7000E5EE81 /* Seva.m in Sources */,
