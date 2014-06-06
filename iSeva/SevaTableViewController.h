@@ -8,6 +8,24 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SevaTableViewController : UITableViewController
+@class SevaDetailsViewController;
+@class AddSevaViewController;
+
+@interface SevaTableViewController : UITableViewController <NSFetchedResultsControllerDelegate>
+
+@property (strong, nonatomic) SevaDetailsViewController *sevaDetailsViewController;
+
+@property (strong, nonatomic) AddSevaViewController *addSevaViewController;
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+
+
+/*
+ MOC connects to PSC.
+ 
+ */
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

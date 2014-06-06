@@ -9,29 +9,76 @@
 #import "SevaDetailsViewController.h"
 
 @interface SevaDetailsViewController ()
-
+@property (strong, nonatomic) UIPopoverController *masterPopoverController;
+- (void)configureView;
 @end
+
 
 @implementation SevaDetailsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
+#pragma mark - Managing the detail item
+
+- (void)setDetailItem:(id)newDetailItem
 {
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
+    if (_detailItem != newDetailItem) {
+        _detailItem = newDetailItem;
+        
+        // Update the view.
+        [self configureView];
     }
-    return self;
+    
+    if (self.masterPopoverController != nil) {
+        [self.masterPopoverController dismissPopoverAnimated:YES];
+    }
+}
+
+- (void)configureView
+{
+    // Update the user interface for the detail item.
+    
+    if (self.detailItem) {
+        self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+    }
+}
+
+- (void)addUser
+{
+    [self performSegueWithIdentifier:@"detailToAdd" sender:self];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    //  self.navigationItem.leftBarButtonItem = self.editButtonItem;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addUser)];
+    self.navigationItem.rightBarButtonItem = addButton;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIImageView* image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"my.jpg"]];
+    image.center = self.view.center;
+    image.frame = CGRectMake(image.frame.origin.x, image.frame.origin.y, 50, 50);
+    
+    // make new layer to contain shadow and masked image
+    CALayer* containerLayer = [CALayer layer];
+    containerLayer.shadowColor = [UIColor blackColor].CGColor;
+    containerLayer.shadowRadius = 10.f;
+    containerLayer.shadowOffset = CGSizeMake(0.f, 5.f);
+    containerLayer.shadowOpacity = 1.f;
+    
+    // use the image's layer to mask the image into a circle
+    image.layer.cornerRadius = roundf(image.frame.size.width/2.0);
+    image.layer.masksToBounds = YES;
+    
+    // add masked image layer into container layer so that it's shadowed
+    [containerLayer addSublayer:image.layer];
+    
+    // add container including masked image and shadow into view
+    [self.view.layer addSublayer:containerLayer];
+    
+    
+	// Do any additional setup after loading the view, typically from a nib.
+    [self configureView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,80 +87,29 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
+#pragma mark - Split view
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
+    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
+    self.masterPopoverController = popoverController;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    // Called when the view is shown again in the split view, invalidating the button and popover controller.
+    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
+    self.masterPopoverController = nil;
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
+
+- (IBAction)viewAssignedSevadars:(id)sender {
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (IBAction)addNewSeva:(id)sender {
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+- (IBAction)editSeva:(id)sender {
 }
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

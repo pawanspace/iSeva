@@ -116,4 +116,6 @@
 }
 */
 
+- (IBAction)addSeva:(id)sender {
+}
 @end

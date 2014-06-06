@@ -7,7 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreData/CoreData.h>
+@class SevaTableViewController;
 
 @interface AddSevaViewController : UITableViewController
+
+
+    @property (strong, nonatomic) IBOutlet UITextField *sevaName;
+
+    @property (strong, nonatomic) IBOutlet UITextField *location;
+    @property (strong, nonatomic) IBOutlet UITextView *description;
+    - (IBAction)addSeva:(id)sender;
+
+    @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+
+    @property (strong, nonatomic) SevaTableViewController *sevaTableViewController;
+
+
+    /*
+     MOC connects to PSC.
+     
+     */
+
+    @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
