@@ -23,6 +23,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *sevadarImage;
 
+-(IBAction)textFieldReturn:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIView *imageCell;
 

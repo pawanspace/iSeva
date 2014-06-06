@@ -54,30 +54,7 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addUser)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    
-    UIImageView* image = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"my.jpg"]];
-    image.center = self.view.center;
-    image.frame = CGRectMake(image.frame.origin.x, image.frame.origin.y, 50, 50);
-    
-    // make new layer to contain shadow and masked image
-    CALayer* containerLayer = [CALayer layer];
-    containerLayer.shadowColor = [UIColor blackColor].CGColor;
-    containerLayer.shadowRadius = 10.f;
-    containerLayer.shadowOffset = CGSizeMake(0.f, 5.f);
-    containerLayer.shadowOpacity = 1.f;
-    
-    // use the image's layer to mask the image into a circle
-    image.layer.cornerRadius = roundf(image.frame.size.width/2.0);
-    image.layer.masksToBounds = YES;
-    
-    // add masked image layer into container layer so that it's shadowed
-    [containerLayer addSublayer:image.layer];
-    
-    // add container including masked image and shadow into view
-    [self.view.layer addSublayer:containerLayer];
-    
-    
-	// Do any additional setup after loading the view, typically from a nib.
+   	// Do any additional setup after loading the view, typically from a nib.
     [self configureView];
 }
 

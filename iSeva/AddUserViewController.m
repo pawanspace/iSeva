@@ -60,7 +60,10 @@
     
 }
 
-
+-(IBAction)textFieldReturn:(id)sender
+{
+    [sender resignFirstResponder];
+}
 
 
 - (void)viewDidLoad
