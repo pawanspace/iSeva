@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "Seva.h"
 @class SevaTableViewController;
 
-@interface AddSevaViewController : UITableViewController
+@interface AddSevaViewController : UITableViewController  <UINavigationControllerDelegate,UITextFieldDelegate>
+
 
 
     @property (strong, nonatomic) IBOutlet UITextField *sevaName;
@@ -23,6 +25,7 @@
 
     @property (strong, nonatomic) SevaTableViewController *sevaTableViewController;
 
+    @property (strong, nonatomic) Seva *seva;
 
     /*
      MOC connects to PSC.

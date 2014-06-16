@@ -39,6 +39,7 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(gotoAddUserController:)];
     self.navigationItem.rightBarButtonItem = addButton;
     self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    self.detailViewController.managedObjectContext = self.managedObjectContext;
 }
 
 - (void)didReceiveMemoryWarning
@@ -136,9 +137,10 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    if ([[segue identifier] isEqualToString:@"sevadarDetails"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+            [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
         [[segue destinationViewController] setDetailItem:object];
     }
 }
@@ -246,7 +248,7 @@
 {
     Sevadar *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
     cell.name.text = [[object valueForKey:@"name"] description];
-    cell.thumbnail.image = object.thumbnail;
+    [cell.thumbnail setImage:[object thumbnail]];
 }
 
 @end

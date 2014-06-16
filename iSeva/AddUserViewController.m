@@ -26,6 +26,18 @@
     return self;
 }
 
+
+- (IBAction)insertSevadar:(id)sender {
+    [self insertNewObject:sender];
+}
+
+//- (IBAction)backgroundTouched:(id)sender {
+//    [self.view endEditing:YES];
+//}
+
+
+
+
 - (IBAction)addImage:(id)sender {
     
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
@@ -49,22 +61,25 @@
     //Get image from selection
     
     UIImage *imageFromSelection = [info objectForKey:UIImagePickerControllerOriginalImage];
-    
-    //put that image to image view;
-    [self.sevadarImage setImage:imageFromSelection];
+   
+  
     UIImageView* image = [[UIImageView alloc] initWithImage:imageFromSelection];
     //remove image picker
     [self loadImage:image];
+    
+    self.sevadarImage = image;
+    //put that image to image view;
+//    [self.sevadarImage setImage:imageFromSelection];
     
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 
--(IBAction)textFieldReturn:(id)sender
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    [sender resignFirstResponder];
+    [textField resignFirstResponder];
+    return YES;
 }
-
 
 - (void)viewDidLoad
 {
@@ -73,6 +88,12 @@
     UIImage *imageDefault = [UIImage imageNamed:@"default-avatar.jpeg"];
     UIImageView* image = [[UIImageView alloc] initWithImage:imageDefault];
 
+    self.sevadarEmail.delegate = self;
+    self.sevadarPhoneNumber.delegate = self;
+    self.name.delegate = self;
+    self.city.delegate = self;
+    
+    
     [self loadImage:image];
    
     
@@ -114,17 +135,47 @@
 
 - (void)insertNewObject:(id)sender
 {
-    NSManagedObjectContext *context = [self.fetchedResultsController managedObjectContext];
-    NSEntityDescription *entity = [[self.fetchedResultsController fetchRequest] entity];
-    NSManagedObject *newManagedObject = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    NSString *imageName = [[self.name.text stringByReplacingOccurrencesOfString:@" "  withString:@"_"] stringByAppendingString:@".png"];
     
-    // If appropriate, configure the new managed object.
-    // Normally you should use accessor methods, but using KVC here avoids the need to add a custom class to the template.
-    [newManagedObject setValue:[NSDate date] forKey:@"timeStamp"];
+    NSData *pngData = UIImagePNGRepresentation(self.sevadarImage.image);
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentdsPath = [paths objectAtIndex:0];
+    NSLog(@"%@",documentdsPath);
+    NSString *filePath = [documentdsPath stringByAppendingPathComponent:imageName];
+    [pngData writeToFile:filePath atomically:YES];
+    
+    
+    self.sevadar = [NSEntityDescription
+                 insertNewObjectForEntityForName:@"Sevadar"
+                 inManagedObjectContext:self.managedObjectContext];
+    
+
+    
+    
+ 
+    if(_sevadar == nil){
+        NSLog(@"Sevadar is null");
+    }
+    
+    [self.sevadar setName:self.name.text];
+    [self.sevadar setEmail:self.sevadarEmail.text];
+    
+  //  NSNumber *availabilityNum = [NSNumber numberWithBool:self.availability.enabled];
+    
+    NSNumber *availabilityNum  = [NSNumber numberWithBool:self.availability.on];
+    
+    [self.sevadar setAvailability:availabilityNum];
+    
+    [self.sevadar setCity:self.city.text];
+    
+    [self.sevadar setThumbnailDataFromImage:self.sevadarImage.image];
+    
+    [self.sevadar setPhone:self.sevadarPhoneNumber.text];
     
     // Save the context.
-    NSError *error = nil;
-    if (![context save:&error]) {
+   NSError *error = nil;
+    if (![self.managedObjectContext save:&error]) {
         // Replace this implementation with code to handle the error appropriately.
         // abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
         NSLog(@"Unresolved error %@, %@", error, [error userInfo]);

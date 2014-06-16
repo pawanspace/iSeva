@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+@interface DetailViewController : UITableViewController  <UINavigationControllerDelegate>
 
 @property (strong, nonatomic) id detailItem;
 
@@ -24,4 +24,12 @@
 @property (strong, nonatomic) IBOutlet UISwitch *availability;
 
 @property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+
+
+@property (strong, nonatomic) IBOutlet UIView *imageCell;
+
+
+
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end
