@@ -59,7 +59,7 @@
 
 - (IBAction)addSeva:(id)sender {
     
-        SelectSevadarViewController *selectSevadarController  = [self.storyboard  instantiateViewControllerWithIdentifier:@"selectSevadar"];
+        SelectSevadarViewController *selectSevadarController  = [self.storyboard  instantiateViewControllerWithIdentifier:@"selectSeva"];
         [selectSevadarController setManagedObjectContext:self.managedObjectContext];
         [self.navigationController pushViewController:selectSevadarController animated:YES];
         
