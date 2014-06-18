@@ -15,7 +15,7 @@
 #import "Seva.h"
 
 @interface SevaTableViewController ()
-
+ - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 @end
 
 @implementation SevaTableViewController
@@ -47,11 +47,23 @@
 }
 
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"sevaDetails"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
+        [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
+        [[segue destinationViewController] setDetailItem:object];
+    }
+}
+
+
 - (void)gotoAddSevaController:(id)sender
 {
     self.addSevaViewController = [self.storyboard  instantiateViewControllerWithIdentifier:@"addSeva"];
     [self.addSevaViewController setManagedObjectContext:self.managedObjectContext];
     [self.addSevaViewController setSevaTableViewController:self];
+    
     [self.navigationController pushViewController:self.addSevaViewController animated:YES];
     
 }
@@ -114,14 +126,6 @@
     }
 }
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSManagedObject *object = [[self fetchedResultsController] objectAtIndexPath:indexPath];
-        [[segue destinationViewController] setDetailItem:object];
-    }
-}
 
 #pragma mark - Fetched results controller
 

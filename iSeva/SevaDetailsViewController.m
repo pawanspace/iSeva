@@ -37,7 +37,9 @@
     // Update the user interface for the detail item.
     
     if (self.detailItem) {
-     //   self.detailDescriptionLabel.text = [[self.detailItem valueForKey:@"timeStamp"] description];
+        self.description.text = [[self.detailItem valueForKey:@"desc"] description];
+        self.sevaName.text = [[self.detailItem valueForKey:@"name"] description];
+        self.location.text = [[self.detailItem valueForKey:@"location"] description];
     }
 }
 

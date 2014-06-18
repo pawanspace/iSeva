@@ -14,9 +14,13 @@
 
     @property (strong, nonatomic) IBOutlet UILabel *sevaName;
     @property (strong, nonatomic) IBOutlet UILabel *location;
-    @property (strong, nonatomic) IBOutlet UILabel *description;
+
+    @property (strong, nonatomic) IBOutlet UITextView *description;
+
     - (IBAction)viewAssignedSevadars:(id)sender;
     - (IBAction)addNewSeva:(id)sender;
     - (IBAction)editSeva:(id)sender;
+
+    @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end
