@@ -8,6 +8,7 @@
 
 #import "AddUserViewController.h"
 #import <QuartzCore/QuartzCore.h>
+#import "SelectSevadarViewController.h"
 
 @interface AddUserViewController ()
 
@@ -56,24 +57,21 @@
     
 }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    //Get image from selection
+- (IBAction)addSeva:(id)sender {
     
-    UIImage *imageFromSelection = [info objectForKey:UIImagePickerControllerOriginalImage];
-   
-  
-    UIImageView* image = [[UIImageView alloc] initWithImage:imageFromSelection];
-    //remove image picker
-    [self loadImage:image];
-    
-    self.sevadarImage = image;
-    //put that image to image view;
-//    [self.sevadarImage setImage:imageFromSelection];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-    
+        SelectSevadarViewController *selectSevadarController  = [self.storyboard  instantiateViewControllerWithIdentifier:@"selectSevadar"];
+        [selectSevadarController setManagedObjectContext:self.managedObjectContext];
+        [self.navigationController pushViewController:selectSevadarController animated:YES];
+        
 }
+
+
+
+
+
+
+
+
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
@@ -92,8 +90,8 @@
     self.sevadarPhoneNumber.delegate = self;
     self.name.delegate = self;
     self.city.delegate = self;
-    
-    
+    self.colorArray  = [[NSArray alloc] initWithObjects:@"Blue",@"Green",@"Orange",@"Purple",@"Red",@"Yellow" , nil];
+     self.selectedItems = [[NSMutableArray alloc]  init];
     [self loadImage:image];
    
     
@@ -131,6 +129,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 
 - (void)insertNewObject:(id)sender

@@ -521,6 +521,12 @@
                                         <action selector="addImage:" destination="WnX-dm-0nE" id="kgF-H0-KMY"/>
                                     </connections>
                                 </barButtonItem>
+                                <barButtonItem width="189" style="plain" systemItem="fixedSpace" id="yiB-Wj-6FW"/>
+                                <barButtonItem title="Add Seva" id="evv-g0-1wf">
+                                    <connections>
+                                        <action selector="addSeva:" destination="WnX-dm-0nE" id="MKP-BI-l88"/>
+                                    </connections>
+                                </barButtonItem>
                             </items>
                         </toolbar>
                         <sections>
@@ -697,6 +703,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKn-iq-x3i" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749" y="-770"/>
+        </scene>
+        <!--Select Sevadar View Controller - Master-->
+        <scene sceneID="kID-Mg-jwh">
+            <objects>
+                <tableViewController storyboardIdentifier="selectSevadar" title="Master" id="ThG-Mb-ILY" customClass="SelectSevadarViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" allowsMultipleSelection="YES" allowsMultipleSelectionDuringEditing="YES" rowHeight="45" sectionHeaderHeight="22" sectionFooterHeight="22" id="AER-Qc-uIH">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SevadarImageTableViewCell" rowHeight="45" id="2hc-Su-s0D" customClass="ImageTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2hc-Su-s0D" id="42e-ju-pVP">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kvf-Ih-wfV">
+                                            <rect key="frame" x="6" y="0.0" width="40" height="41"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0SN-z1-sbB">
+                                            <rect key="frame" x="55" y="11" width="177" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="0SN-z1-sbB" id="n6C-f8-ky3"/>
+                                    <outlet property="thumbnail" destination="kvf-Ih-wfV" id="HsV-NC-ztL"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="ThG-Mb-ILY" id="FYd-nU-TNf"/>
+                            <outlet property="delegate" destination="ThG-Mb-ILY" id="Iwk-Bc-eHC"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wOK-0Z-56Z" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="737" y="-96"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

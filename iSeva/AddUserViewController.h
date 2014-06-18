@@ -12,7 +12,7 @@
 #import "MasterViewController.h"
 #import "Sevadar.h"
 
-@interface AddUserViewController : UITableViewController  <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UITextFieldDelegate>
+@interface AddUserViewController : UITableViewController  <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UITextFieldDelegate, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *name;
 
@@ -21,7 +21,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *city;
 @property (weak, nonatomic) IBOutlet UISwitch *availability;
 @property (weak, nonatomic) IBOutlet UIButton *addSevadar;
-
+@property (strong, nonatomic) NSArray *colorArray;
+@property (strong, nonatomic) NSMutableArray *selectedItems;
 
 @property (strong, nonatomic) Sevadar *sevadar;
 
@@ -40,6 +41,10 @@
 
 - (IBAction)addImage:(id)sender;
 
+
+- (IBAction)addSeva:(id)sender;
+
+- (void)toggleSelection:(UITapGestureRecognizer *)recognizer;
 
 /*
  MOC connects to PSC.
