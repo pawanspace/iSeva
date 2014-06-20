@@ -66,9 +66,20 @@
 }
 
 
-
-
-
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    //Get image from selection
+    
+    UIImage *imageFromSelection = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    //put that image to image view;
+    [self.sevadarImage setImage:imageFromSelection];
+    
+    //remove image picker
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
 
 
 
@@ -84,7 +95,7 @@
     [super viewDidLoad];
     
     UIImage *imageDefault = [UIImage imageNamed:@"default-avatar.jpeg"];
-    UIImageView* image = [[UIImageView alloc] initWithImage:imageDefault];
+    self.sevadarImage = [[UIImageView alloc] initWithImage:imageDefault];
 
     _sevadar = self.detailItem;
     if(_sevadar != nil){
@@ -100,7 +111,7 @@
         
         UIImage *realImage = [UIImage imageWithData:data];
         
-        image = [[UIImageView alloc] initWithImage:realImage];
+        self.sevadarImage = [[UIImageView alloc] initWithImage:realImage];
         self.titleItem.title = @"Edit Sevadar";
     }
     
@@ -110,7 +121,7 @@
     self.city.delegate = self;
     
     
-    [self loadImage:image];
+    [self loadImage:self.sevadarImage];
    
     
 	// Do any additional setup after loading the view.
