@@ -101,9 +101,9 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"editUser"]) {
+    if ([[segue identifier] isEqualToString:@"editSevadar"]) {
         [[segue destinationViewController] setManagedObjectContext:self.managedObjectContext];
-        [[segue destinationViewController] setUser:self.detailItem ];
+        [[segue destinationViewController] setDetailItem:self.detailItem ];
     }
 }
 
@@ -115,6 +115,7 @@
     NSString *filePath = [documentdsPath stringByAppendingPathComponent:name];
     return filePath;
 }
+
 
 
 - (void)addUser

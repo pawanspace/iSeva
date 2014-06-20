@@ -414,13 +414,13 @@
                             <rect key="frame" x="0.0" y="367" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <items>
-                                <barButtonItem title="Edit" id="Tct-Yi-jfr"/>
-                                <barButtonItem style="plain" systemItem="flexibleSpace" id="8tn-Uj-Uh6"/>
-                                <barButtonItem systemItem="add" id="14D-YH-KVn">
+                                <barButtonItem title="Edit" id="Tct-Yi-jfr">
                                     <connections>
-                                        <segue destination="WnX-dm-0nE" kind="push" identifier="" id="p49-eE-uuF"/>
+                                        <segue destination="WnX-dm-0nE" kind="push" identifier="editSevadar" id="lie-LX-Ppw"/>
                                     </connections>
                                 </barButtonItem>
+                                <barButtonItem style="plain" systemItem="flexibleSpace" id="8tn-Uj-Uh6"/>
+                                <barButtonItem systemItem="add" id="14D-YH-KVn"/>
                             </items>
                         </toolbar>
                         <sections>
@@ -709,9 +709,9 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xmk-eA-qKh">
-                                                    <rect key="frame" x="140" y="7" width="30" height="30"/>
+                                                    <rect key="frame" x="140" y="7" width="34" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Add">
+                                                    <state key="normal" title="Save">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -741,6 +741,7 @@
                         <outlet property="name" destination="XkU-x4-pN1" id="NMH-vE-Duv"/>
                         <outlet property="sevadarEmail" destination="0gH-dI-Tqj" id="Tjx-40-7DL"/>
                         <outlet property="sevadarPhoneNumber" destination="Qs1-0M-80w" id="Bif-NX-T1v"/>
+                        <outlet property="titleItem" destination="4rP-qf-Utn" id="jp3-Sj-piQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SKn-iq-x3i" userLabel="First Responder" sceneMemberID="firstResponder"/>

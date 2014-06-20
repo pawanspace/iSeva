@@ -25,6 +25,10 @@
 @property (strong, nonatomic) NSMutableArray *selectedItems;
 
 @property (strong, nonatomic) Sevadar *sevadar;
+@property (strong, nonatomic) id detailItem;
+
+@property (strong, nonatomic) IBOutlet UINavigationItem *titleItem;
+
 
 
 @property (strong, nonatomic) IBOutlet UIImageView *sevadarImage;

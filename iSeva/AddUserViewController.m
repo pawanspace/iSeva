@@ -86,16 +86,42 @@
     UIImage *imageDefault = [UIImage imageNamed:@"default-avatar.jpeg"];
     UIImageView* image = [[UIImageView alloc] initWithImage:imageDefault];
 
+    _sevadar = self.detailItem;
+    if(_sevadar != nil){
+        self.sevadarEmail.text = _sevadar.email;
+        self.sevadarPhoneNumber.text = _sevadar.phone;
+        self.name.text = _sevadar.name;
+        self.city.text = _sevadar.city;
+        self.availability.on = _sevadar.availability;
+        NSString *imageName = [[_sevadar.name
+                                stringByReplacingOccurrencesOfString:@" "  withString:@"_"] stringByAppendingString:@".png"];
+        NSString *filePath = [self getDocumentPathForFileName:imageName];
+        NSData *data = [NSData dataWithContentsOfFile:filePath];
+        
+        UIImage *realImage = [UIImage imageWithData:data];
+        
+        image = [[UIImageView alloc] initWithImage:realImage];
+        self.titleItem.title = @"Edit Sevadar";
+    }
+    
     self.sevadarEmail.delegate = self;
     self.sevadarPhoneNumber.delegate = self;
     self.name.delegate = self;
     self.city.delegate = self;
-    self.colorArray  = [[NSArray alloc] initWithObjects:@"Blue",@"Green",@"Orange",@"Purple",@"Red",@"Yellow" , nil];
-     self.selectedItems = [[NSMutableArray alloc]  init];
+    
+    
     [self loadImage:image];
    
     
 	// Do any additional setup after loading the view.
+}
+
+- (NSString*) getDocumentPathForFileName:(NSString*)name
+{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentdsPath = [paths objectAtIndex:0];
+    NSString *filePath = [documentdsPath stringByAppendingPathComponent:name];
+    return filePath;
 }
 
 
@@ -145,22 +171,18 @@
     [pngData writeToFile:filePath atomically:YES];
     
     
-    self.sevadar = [NSEntityDescription
+    if(self.sevadar == nil){
+        self.sevadar = [NSEntityDescription
                  insertNewObjectForEntityForName:@"Sevadar"
                  inManagedObjectContext:self.managedObjectContext];
-    
+    }
 
-    
-    
- 
     if(_sevadar == nil){
         NSLog(@"Sevadar is null");
     }
     
     [self.sevadar setName:self.name.text];
     [self.sevadar setEmail:self.sevadarEmail.text];
-    
-  //  NSNumber *availabilityNum = [NSNumber numberWithBool:self.availability.enabled];
     
     NSNumber *availabilityNum  = [NSNumber numberWithBool:self.availability.on];
     
