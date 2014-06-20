@@ -30,7 +30,11 @@
     
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(saveSelectedSeva:)];
     self.navigationItem.rightBarButtonItem = doneButton;
-    self.selectedSeva = [[NSMutableArray alloc] init];
+    
+    if(self.selectedSeva == nil){
+        self.selectedSeva = [[NSMutableArray alloc] init];
+    }
+
     [self.tableView setEditing:YES animated:YES];
 }
 
@@ -38,11 +42,12 @@
 - (void)saveSelectedSeva:(id)sender
 {
     NSLog(@"Selected seva: %@",self.selectedSeva);
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 
 - (void)didReceiveMemoryWarning
-{
+{	
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -64,6 +69,7 @@
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
     [self configureCell:cell atIndexPath:indexPath];
+    
     return cell;
 }
 
@@ -212,6 +218,13 @@
 - (void)configureCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
 {
     Seva *object = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    if([self.selectedSeva containsObject:object]){
+        [self.tableView
+             selectRowAtIndexPath:indexPath
+             animated:TRUE
+             scrollPosition:UITableViewScrollPositionNone
+         ];
+    }
     cell.textLabel.text = [[object valueForKey:@"name"] description];
 }
 

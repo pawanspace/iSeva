@@ -8,7 +8,7 @@
 
 #import "AddUserViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "SelectSevadarViewController.h"
+#import "SelectSevaViewController.h"
 
 @interface AddUserViewController ()
 
@@ -59,9 +59,11 @@
 
 - (IBAction)addSeva:(id)sender {
     
-        SelectSevadarViewController *selectSevadarController  = [self.storyboard  instantiateViewControllerWithIdentifier:@"selectSeva"];
-        [selectSevadarController setManagedObjectContext:self.managedObjectContext];
-        [self.navigationController pushViewController:selectSevadarController animated:YES];
+        self.selectSevaController  = [self.storyboard  instantiateViewControllerWithIdentifier:@"selectSeva"];
+        [self.selectSevaController setManagedObjectContext:self.managedObjectContext];
+         [self.selectSevaController setSelectedSeva:[NSMutableArray arrayWithArray:[_sevadar.sevas allObjects]]];
+    
+        [self.navigationController pushViewController:self.selectSevaController animated:YES];
         
 }
 
@@ -112,6 +114,7 @@
         UIImage *realImage = [UIImage imageWithData:data];
         
         self.sevadarImage = [[UIImageView alloc] initWithImage:realImage];
+
         self.titleItem.title = @"Edit Sevadar";
     }
     
@@ -204,6 +207,12 @@
     [self.sevadar setThumbnailDataFromImage:self.sevadarImage.image];
     
     [self.sevadar setPhone:self.sevadarPhoneNumber.text];
+    
+       NSLog(@"Selected seva: %@",self.selectSevaController.selectedSeva);
+    
+    NSSet *selectedSevas = [NSSet setWithArray:self.selectSevaController.selectedSeva];
+    
+    [self.sevadar setSevas:selectedSevas];
     
     // Save the context.
    NSError *error = nil;

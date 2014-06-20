@@ -11,6 +11,7 @@
 #import <CoreData/CoreData.h>
 #import "MasterViewController.h"
 #import "Sevadar.h"
+@class SelectSevaViewController;
 
 @interface AddUserViewController : UITableViewController  <UINavigationControllerDelegate, UIImagePickerControllerDelegate,UITextFieldDelegate, UITableViewDelegate>
 
@@ -42,6 +43,8 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 
 @property (strong, nonatomic) MasterViewController *masterViewController;
+
+@property (strong, nonatomic) SelectSevaViewController *selectSevaController;
 
 - (IBAction)addImage:(id)sender;
 
